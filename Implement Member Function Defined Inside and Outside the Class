@@ -1,0 +1,28 @@
+AIM: To implement member functions defined inside and outside a class.
+ALGORITHM:
+● Define a class with data members.
+● Define one function inside the class and another outside using scope resolution operator ::.
+● Create an object and call both functions.
+● Display the results.
+PROGRAM:
+#include <iostream>
+using namespace std;
+class Rectangle {
+int length, breadth;
+public:
+void setData(int l, int b); // Declaration
+void area() { // Defined inside class
+cout << "Area = " << length * breadth << endl;
+}
+};
+// Definition outside the class
+void Rectangle::setData(int l, int b) {
+length = l;
+breadth = b;
+}
+int main() {
+Rectangle r;
+r.setData(10, 5);
+r.area();
+return 0;
+}
